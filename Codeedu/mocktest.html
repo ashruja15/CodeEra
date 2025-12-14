@@ -5,139 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mock Test</title>
     <style>
-        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f7f7f7;
-            background-image: url('loginbackground.jpg'); /* Replace 'your-image.jpg' with your image URL */
-    background-size: cover; /* Ensure the image covers the entire screen */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: center; /* Center the image on the screen */
+            background-image: url('loginbackground.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         h2 {
             text-align: center;
-            font-size: 2rem;
-            color: #333;
+            color: #ff7200;
         }
         .question {
             margin-bottom: 15px;
             padding: 15px;
             background-color: #fff;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .question p {
             font-size: 1.1rem;
-            color: #333;
         }
-        .question label {
+        label {
             display: block;
-            margin: 10px 0;
-            font-size: 1rem;
-            color: #555;
+            margin: 8px 0;
         }
-
-        /* Button styling */
         .button {
             text-align: center;
             margin-top: 20px;
         }
-        .button button {
-            color: white;
+        button {
             background-color: #ff7200;
+            color: white;
             padding: 12px 24px;
             border: none;
             border-radius: 5px;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .button button:hover {
-            background-color: #ff7200;
-        }
-
-        /* Result section styling */
         #result {
             display: none;
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.5rem;
-            color: #333;
+            background: #fff;
             padding: 20px;
-            background-color: #fff;
+            margin-top: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.3rem;
         }
     </style>
 </head>
+
 <body>
-    <h2 style="color: #ff7200;">JavaScript Basics Test</h2>
 
-    <!-- Question 1 -->
-    <div class="question">
-        <p>1. What is the correct syntax to print a message in JavaScript?</p>
-        <label><input type="radio" name="q1" value="A"> A) print("Hello, World!");</label>
-        <label><input type="radio" name="q1" value="B"> B) console.log("Hello, World!");</label>
-        <label><input type="radio" name="q1" value="C"> C) echo "Hello, World!";</label>
-        <label><input type="radio" name="q1" value="D"> D) printf("Hello, World!");</label>
-    </div>
+<h2>JavaScript Basics Mock Test</h2>
 
-    <!-- Question 2 -->
-    <div class="question">
-        <p>2. Which method is used to find the length of an array in JavaScript?</p>
-        <label><input type="radio" name="q2" value="A"> A) array.length()</label>
-        <label><input type="radio" name="q2" value="B"> B) array.size()</label>
-        <label><input type="radio" name="q2" value="C"> C) array.length</label>
-        <label><input type="radio" name="q2" value="D"> D) array.count()</label>
-    </div>
+<!-- Question 1 -->
+<div class="question">
+    <p>1. What is the correct syntax to print a message in JavaScript?</p>
+    <label><input type="radio" name="q1" value="A"> print("Hello")</label>
+    <label><input type="radio" name="q1" value="B"> console.log("Hello")</label>
+    <label><input type="radio" name="q1" value="C"> echo "Hello"</label>
+    <label><input type="radio" name="q1" value="D"> printf("Hello")</label>
+</div>
 
-    <!-- Question 3 -->
-    <div class="question">
-        <p>3. How do you declare a variable in JavaScript?</p>
-        <label><input type="radio" name="q3" value="A"> A) var x;</label>
-        <label><input type="radio" name="q3" value="B"> B) variable x;</label>
-        <label><input type="radio" name="q3" value="C"> C) declare x;</label>
-        <label><input type="radio" name="q3" value="D"> D) x var;</label>
-    </div>
+<!-- Question 2 -->
+<div class="question">
+    <p>2. How do you find the length of an array in JavaScript?</p>
+    <label><input type="radio" name="q2" value="A"> array.size()</label>
+    <label><input type="radio" name="q2" value="B"> array.count()</label>
+    <label><input type="radio" name="q2" value="C"> array.length</label>
+    <label><input type="radio" name="q2" value="D"> array.len()</label>
+</div>
 
-    <!-- Submit Button -->
-    <div class="button">
-        <button type="button" onclick="checkAnswers()">Submit</button>
-    </div>
+<!-- Question 3 -->
+<div class="question">
+    <p>3. Which keyword is used to declare a variable?</p>
+    <label><input type="radio" name="q3" value="A"> var</label>
+    <label><input type="radio" name="q3" value="B"> define</label>
+    <label><input type="radio" name="q3" value="C"> int</label>
+    <label><input type="radio" name="q3" value="D"> letvar</label>
+</div>
 
-    <!-- Results Section -->
-    <div id="result">
-        <h3>Your Score: <span id="score"></span></h3>
-    </div>
+<!-- Question 4 -->
+<div class="question">
+    <p>4. Which symbol is used for single-line comments in JavaScript?</p>
+    <label><input type="radio" name="q4" value="A"> &lt;!-- --&gt;</label>
+    <label><input type="radio" name="q4" value="B"> //</label>
+    <label><input type="radio" name="q4" value="C"> ##</label>
+    <label><input type="radio" name="q4" value="D"> **</label>
+</div>
 
-    <script>
-        // Function to check answers
-        function checkAnswers() {
-            const correctAnswers = {
-                q1: "B", // Correct answer for Question 1
-                q2: "C", // Correct answer for Question 2
-                q3: "A"  // Correct answer for Question 3
-            };
+<!-- Question 5 -->
+<div class="question">
+    <p>5. Which of the following is a valid JavaScript data type?</p>
+    <label><input type="radio" name="q5" value="A"> float</label>
+    <label><input type="radio" name="q5" value="B"> number</label>
+    <label><input type="radio" name="q5" value="C"> character</label>
+    <label><input type="radio" name="q5" value="D"> double</label>
+</div>
 
-            let score = 0;
+<!-- Question 6 -->
+<div class="question">
+    <p>6. How do you write an IF statement in JavaScript?</p>
+    <label><input type="radio" name="q6" value="A"> if i == 5</label>
+    <label><input type="radio" name="q6" value="B"> if (i == 5)</label>
+    <label><input type="radio" name="q6" value="C"> if i = 5 then</label>
+    <label><input type="radio" name="q6" value="D"> if i equals 5</label>
+</div>
 
-            // Check if the selected answers are correct
-            for (let question in correctAnswers) {
-                const selectedAnswer = document.querySelector(`input[name=${question}]:checked`);
-                
-                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
-                    score++;
-                }
-            }
+<div class="button">
+    <button onclick="checkAnswers()">Submit Test</button>
+</div>
 
-            // Display the score
-            document.getElementById('score').textContent = score;
+<div id="result">
+    <strong>Your Score: <span id="score"></span> / 6</strong>
+</div>
 
-            // Show the result
-            document.getElementById('result').style.display = 'block';
+<script>
+function checkAnswers() {
+    const correctAnswers = {
+        q1: "B",
+        q2: "C",
+        q3: "A",
+        q4: "B",
+        q5: "B",
+        q6: "B"
+    };
+
+    let score = 0;
+
+    for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name=${q}]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+            score++;
         }
-    </script>
+    }
+
+    document.getElementById("score").textContent = score;
+    document.getElementById("result").style.display = "block";
+}
+</script>
+
 </body>
 </html>
+
